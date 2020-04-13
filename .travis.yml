@@ -21,3 +21,4 @@ after_success:
   - docker push ohnova/multi-nginx
   - docker push ohnova/multi-server
   - docker push ohnova/multi-worker
+  
