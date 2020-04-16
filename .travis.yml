@@ -21,4 +21,16 @@ after_success:
   - docker push ohnova/multi-nginx
   - docker push ohnova/multi-server
   - docker push ohnova/multi-worker
-  
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: ap-northeast-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucker_name: elasticbeanstalk-ap-northeast-2-632834813816
+  bucker_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
